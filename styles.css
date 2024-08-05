@@ -28,8 +28,11 @@
 }
 
 #response {
-    max-height: 200px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
     border: 1px solid #ccc;
-    padding: 10px;
+    border-radius: 8px;
+    padding: 16px;
 }
