@@ -1,0 +1,29 @@
+#search {
+    display: grid;
+}
+
+#search_button {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #007aff;
+    border: 0;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif, Arial;
+    font-size: small;
+}
+
+#search_button :hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+#search_query {
+    padding: 16px;
+    border: 0;
+    background-color: rgba(128, 128, 128, 0.103);
+    border-radius: 8px;
+    font-family: Helvetica, sans-serif, Arial;
+    font-size: small;
+}
