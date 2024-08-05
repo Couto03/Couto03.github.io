@@ -1,0 +1,9 @@
+{
+    "name": "Youtube Music Downloader",
+    "short_name": "YT Music",
+    "theme_color": "#FFFFFF",
+    "background_color": "#0000FF",
+    "start_url": "/PWA-YTMusic",
+    "display": "standalone",
+    "orientaion": "portrait"
+}

@@ -14,9 +14,8 @@
     font-size: small;
 }
 
-#search_button :hover {
+#search_button:hover {
     cursor: pointer;
-    background-color: red;
 }
 
 #search_query {
