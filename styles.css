@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(182, 182, 228);
+}
+
 #search {
     display: grid;
 }
