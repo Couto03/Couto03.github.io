@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 
                     const container = document.getElementById('response');
                     data.items.forEach((value) => {
+                        const videoId = value.id;
                         const title = value.snippet.title;
                         const thumbnail = value.snippet.thumbnails.maxres.url;
                         const channel = value.snippet.channelTitle;
@@ -32,12 +33,13 @@ window.addEventListener('DOMContentLoaded', () => {
                         const videoPlaceholder = document.createElement('div');
                         videoPlaceholder.style.display = "flex";
                         videoPlaceholder.style.marginBottom = "16px";
+                        videoPlaceholder.style.verticalAlign = "center";
 
                         const image = document.createElement('img');
                         image.src = thumbnail;
                         image.style.display = 'block';
                         image.style.width = '100px';
-                        image.style.height = '100px';
+                        image.style.height = '50px';
                         image.style.borderRadius = '8px';
                         image.style.objectFit = 'cover';
 
@@ -46,18 +48,37 @@ window.addEventListener('DOMContentLoaded', () => {
                         const titleAuthorPlaceholder = document.createElement('div');
                         titleAuthorPlaceholder.style.fontSize = "small";
                         titleAuthorPlaceholder.style.paddingLeft = "20px";
+                        titleAuthorPlaceholder.style.display = "flex";
+                        titleAuthorPlaceholder.style.flex = "1";
+                        titleAuthorPlaceholder.style.flexDirection = "column";
+                        titleAuthorPlaceholder.style.justifyContent = "center"
+                        titleAuthorPlaceholder.style.fontFamily = "Helvetica, sans-serif, Arial"
 
-                        const titlePlaceholder = document.createElement('h2');
+                        const titlePlaceholder = document.createElement('h3');
                         titlePlaceholder.innerText = title;
+                        titlePlaceholder.style.margin = "0";
 
                         const authorPlaceholder = document.createElement('h4');
                         authorPlaceholder.innerText = channel;
                         authorPlaceholder.style.color = "gray";
+                        authorPlaceholder.style.margin = "0";
+                        authorPlaceholder.style.marginTop = "4px";
 
                         titleAuthorPlaceholder.appendChild(titlePlaceholder);
                         titleAuthorPlaceholder.appendChild(authorPlaceholder);
 
+                        const downloadButton = document.createElement('button');
+                        downloadButton.textContent = "Transferir";
+                        downloadButton.value = videoId;
+                        downloadButton.style.backgroundColor = "rgba(128, 128, 128, 0.103)";
+                        downloadButton.style.border = "0";
+                        downloadButton.style.borderRadius = "8px";
+                        downloadButton.onclick = function() {
+                            alert(`Deseja transferir a musica ${videoId}?`)
+                        };
+
                         videoPlaceholder.appendChild(titleAuthorPlaceholder);
+                        videoPlaceholder.appendChild(downloadButton);
 
                         container.appendChild(videoPlaceholder);
                     })
