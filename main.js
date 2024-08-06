@@ -79,16 +79,28 @@ window.addEventListener('DOMContentLoaded', () => {
                         downloadButton.style.marginLeft = "8px";
                         downloadButton.style.padding = "12px";
                         downloadButton.onclick = function() {
-                            fetch(`https://ef1c-2001-8a0-e244-d00-1c-d3e9-e022-3e0.ngrok-free.app/api/download?id=${videoId}`)
+                            const url = `https://ef1c-2001-8a0-e244-d00-1c-d3e9-e022-3e0.ngrok-free.app/api/download?id=${videoId}`
+                            fetch(url)
                                 .then(response => response.json())
                                 .then(data => {
                                     const a = document.createElement('a');
                                     a.style.display = 'none';
                                     a.href = data.url;
+                                    a.target = "_blank";
                                     document.body.appendChild(a);
                                     a.click();
+                                    document.body.removeChild(a);
                                 })
-                                .catch(error => console.error('Error downloading the file:', error));
+                                .catch(error => {
+                                    console.log(error);
+                                    const a = document.createElement('a');
+                                    a.style.display = 'none';
+                                    a.href = url;
+                                    a.target = "_blank";
+                                    document.body.appendChild(a);
+                                    a.click();
+                                    document.body.removeChild(a);
+                                });
                         };
 
                         videoPlaceholder.appendChild(titleAuthorPlaceholder);
