@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         const videoPlaceholder = document.createElement('div');
                         videoPlaceholder.style.display = "flex";
                         videoPlaceholder.style.marginBottom = "16px";
-                        videoPlaceholder.style.verticalAlign = "center";
+                        videoPlaceholder.style.alignItems = "center";
 
                         const image = document.createElement('img');
                         image.src = thumbnail;
@@ -73,6 +73,8 @@ window.addEventListener('DOMContentLoaded', () => {
                         downloadButton.style.backgroundColor = "rgba(128, 128, 128, 0.103)";
                         downloadButton.style.border = "0";
                         downloadButton.style.borderRadius = "8px";
+                        downloadButton.style.marginLeft = "8px";
+                        downloadButton.style.padding = "8px";
                         downloadButton.onclick = function() {
                             alert(`Deseja transferir a musica ${videoId}?`)
                         };
