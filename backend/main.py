@@ -64,7 +64,7 @@ def get_download():
     video_id = request.args.get('id', '')
     audio_file, title = download_audio(video_id)
     if audio_file:
-        return jsonify({"url": f"https://abcd1234.ngrok.io/api/downloads/{os.path.basename(audio_file)}"})
+        return jsonify({"url": f"https://{request.host}/api/downloads/{os.path.basename(audio_file)}"})
     else:
         return jsonify({"error": "Failed to download audio"}), 500
 
