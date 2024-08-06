@@ -79,7 +79,16 @@ window.addEventListener('DOMContentLoaded', () => {
                         downloadButton.style.marginLeft = "8px";
                         downloadButton.style.padding = "12px";
                         downloadButton.onclick = function() {
-                            alert(`Deseja transferir a musica ${videoId}?`)
+                            fetch(`http://192.168.1.73:8080/api/download?id=${videoId}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                    const a = document.createElement('a');
+                                    a.style.display = 'none';
+                                    a.href = data.url;
+                                    document.body.appendChild(a);
+                                    a.click();
+                                })
+                                .catch(error => console.error('Error downloading the file:', error));
                         };
 
                         videoPlaceholder.appendChild(titleAuthorPlaceholder);
