@@ -89,4 +89,4 @@ if __name__ == '__main__':
     # Wait a bit for the server to start
     time.sleep(5)
     # Make an initial dummy request to the ngrok URL to bypass the intro screen
-    requests.get('https://abcd1234.ngrok.io')
+    requests.get('https://ef1c-2001-8a0-e244-d00-1c-d3e9-e022-3e0.ngrok-free.app')
