@@ -54,15 +54,18 @@ window.addEventListener('DOMContentLoaded', () => {
                         titleAuthorPlaceholder.style.justifyContent = "center"
                         titleAuthorPlaceholder.style.fontFamily = "Helvetica, sans-serif, Arial"
 
-                        const titlePlaceholder = document.createElement('h3');
+                        const titlePlaceholder = document.createElement('h5');
                         titlePlaceholder.innerText = title;
                         titlePlaceholder.style.margin = "0";
+                        titlePlaceholder.style.webkitLineClamp = 2;
+                        titlePlaceholder.style.lineClamp = 2;
 
-                        const authorPlaceholder = document.createElement('h4');
+                        const authorPlaceholder = document.createElement('h6');
                         authorPlaceholder.innerText = channel;
                         authorPlaceholder.style.color = "gray";
                         authorPlaceholder.style.margin = "0";
                         authorPlaceholder.style.marginTop = "4px";
+                        authorPlaceholder.style.webkitLineClamp = "1";
 
                         titleAuthorPlaceholder.appendChild(titlePlaceholder);
                         titleAuthorPlaceholder.appendChild(authorPlaceholder);
@@ -74,7 +77,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         downloadButton.style.border = "0";
                         downloadButton.style.borderRadius = "8px";
                         downloadButton.style.marginLeft = "8px";
-                        downloadButton.style.padding = "8px";
+                        downloadButton.style.padding = "12px";
                         downloadButton.onclick = function() {
                             alert(`Deseja transferir a musica ${videoId}?`)
                         };
