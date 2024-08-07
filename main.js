@@ -79,8 +79,12 @@ window.addEventListener('DOMContentLoaded', () => {
                         downloadButton.style.marginLeft = "8px";
                         downloadButton.style.padding = "12px";
                         downloadButton.onclick = function() {
-                            const url = `https://ef1c-2001-8a0-e244-d00-1c-d3e9-e022-3e0.ngrok-free.app/api/download?id=${videoId}`
-                            fetch(url)
+                            const url = `https://f321-2001-8a0-e244-d00-29f3-3638-f37b-9022.ngrok-free.app/api/download?id=${videoId}`
+                            fetch(url, {
+                                headers: {
+                                    "ngrok-skip-browser-warning": "1",
+                                }
+                            })
                                 .then(response => response.json())
                                 .then(data => {
                                     const a = document.createElement('a');
